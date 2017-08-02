@@ -23,7 +23,7 @@ public class HttpClientUtils {
 		CloseableHttpResponse result = httpClient.execute(httpGet);
 		return EntityUtils.toString(result.getEntity(), "utf-8");
 	}
-	
+	/*
 	public static String post(String url) throws Exception {
 		return post(url, null);
 	}
@@ -42,7 +42,7 @@ public class HttpClientUtils {
 		CloseableHttpResponse result = httpClient.execute(httpPost);
 		return EntityUtils.toString(result.getEntity(), "utf-8");
 	}
-	
+	*/
 	public static void queryIPAddrInfo(String ip) throws Exception {
 		if (ip == null || ip.trim().length() == 0) {
 			throw new IllegalArgumentException("参数错误!");
