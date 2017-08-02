@@ -10,7 +10,7 @@ public class HessianClientTest {
 	}
 	
 	public static void main(String[] args) {
-		
+		/*
 		String url = "http://127.0.0.1/testhessian/hessian/math";
 		HessianProxyFactory factory = new HessianProxyFactory();
 		MathService math = null;
@@ -20,6 +20,8 @@ public class HessianClientTest {
 			System.out.println("occer exception: " + e);
 		}
 		System.out.println("3 + 2 = " + math.add(3, 2));
+		*/
 	}
+	
 
 }
