@@ -5,7 +5,7 @@
  */
 package com.test.thread;
 
-public class Threadrun {
+public class Threadrun1 {
 	
 	public static void main(String[] args) {
 		Thread t = new Thread(new Test());
