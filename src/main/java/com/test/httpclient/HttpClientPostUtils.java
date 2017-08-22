@@ -12,8 +12,8 @@ import org.apache.http.util.EntityUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-public class HttpClientUtils {
-	
+public class HttpClientPostUtils {
+	/*
 	public static String get(String url) throws Exception {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet httpGet = new HttpGet(url);
@@ -23,8 +23,9 @@ public class HttpClientUtils {
 		CloseableHttpResponse result = httpClient.execute(httpGet);
 		return EntityUtils.toString(result.getEntity(), "utf-8");
 	}
-	/*
-	public static String post(String url) throws Exception {
+	*/
+	
+	public static String post(String url) throws Exception { 
 		return post(url, null);
 	}
 	
@@ -42,7 +43,7 @@ public class HttpClientUtils {
 		CloseableHttpResponse result = httpClient.execute(httpPost);
 		return EntityUtils.toString(result.getEntity(), "utf-8");
 	}
-	*/
+	/*
 	public static void queryIPAddrInfo(String ip) throws Exception {
 		if (ip == null || ip.trim().length() == 0) {
 			throw new IllegalArgumentException("参数错误!");
@@ -60,8 +61,9 @@ public class HttpClientUtils {
 		jsonObject = jsonObject.getJSONArray("data").getJSONObject(0);
 		System.out.println(jsonObject.getString("origip") + "  " + jsonObject.getString("location"));
 	}
+	*/
 
 	public static void main(String[] args) throws Exception {
-		queryIPAddrInfo("116.224.229.50");
+		//queryIPAddrInfo("116.224.229.50");
 	}
 }
