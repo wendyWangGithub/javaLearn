@@ -4,6 +4,15 @@ public class Dog {
 	private int height;
 	private String tailColor;
 	
+	public Dog() {
+		
+	}
+	
+	public Dog(int height, String tailColor) {
+		this.height = height;
+		this.tailColor = tailColor;
+	}
+	
 	public int getHeight() {
 		return height;
 	}
