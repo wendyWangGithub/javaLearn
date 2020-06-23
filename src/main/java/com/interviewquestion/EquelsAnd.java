@@ -7,6 +7,7 @@ public class EquelsAnd {
 		String b = new String("abc");
 		String c = "abc";
 		testString(a,b,c);
+		System.out.println("addtest" );
 	}
 	
 	public static void testString(String a,String b,String c){
