@@ -1,11 +1,18 @@
 package com.test.basic;
 
+/**
+ * 
+ * @author Vic
+ *	==要地址相等
+ *	equels要值相等
+ */
 public class EqualsOfObjectUse {
 	public static void main(String[] args) {
 		Dog2 d1 = new Dog2(1, 2, 3);
 		Dog2 d2 = new Dog2(1, 2, 3);
 		System.out.println(d1 == d2);
 		System.out.println(d1.equals(d2));
+		System.out.println(1 == 1);
 	}
 	
 }

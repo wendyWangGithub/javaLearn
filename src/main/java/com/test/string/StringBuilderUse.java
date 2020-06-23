@@ -1,5 +1,6 @@
 package com.test.string;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -25,6 +26,7 @@ public class StringBuilderUse {
                sb.append(String.valueOf(i));  
         endTime = System.currentTimeMillis();  
         System.out.println("执行时间：" +(endTime-beginTime));   
+        Assert.assertEquals(2, 1);
 	}
 	
 	/**
@@ -37,8 +39,6 @@ public class StringBuilderUse {
 		sb.append(1);
 		sb.append(2);
 		System.out.println(sb);
+		Assert.assertEquals(2, 1);
 	}
-	
-	
-	
 }

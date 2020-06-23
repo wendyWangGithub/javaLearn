@@ -43,6 +43,4 @@ public class StringArray {
 		}
 		System.out.println();
 	}
-	
-
 }

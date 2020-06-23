@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class W {
-    //д�ļ���֧�������ַ�����linux redhad�²��Թ�
+    
     public static void writeLog(String str)
     {
         try
@@ -17,11 +17,11 @@ public class W {
         if(!file.exists())
             file.createNewFile();
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        FileOutputStream out=new FileOutputStream(file,false); //���׷�ӷ�ʽ��true        
+        FileOutputStream out=new FileOutputStream(file,false);    
         StringBuffer sb=new StringBuffer();
         sb.append("-----------"+sdf.format(new Date())+"------------\n");
         sb.append(str+"\n");
-        out.write(sb.toString().getBytes("utf-8"));//ע����Ҫת����Ӧ���ַ���
+        out.write(sb.toString().getBytes("utf-8"));
         out.close();
         }
         catch(IOException ex)
@@ -48,7 +48,7 @@ public class W {
 //            BufferedReader br=new BufferedReader(new FileReader(file));            
 //            while((tempstr=br.readLine())!=null)
 //                sb.append(tempstr);    
-            	//��һ�ֶ�ȡ��ʽ
+            	
             	FileInputStream fis=new FileInputStream(file);
             	BufferedReader br=new BufferedReader(new InputStreamReader(fis));
             	System.out.println("11111111");
@@ -67,7 +67,7 @@ public class W {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         writeLog("this is a test log");
-        writeLog("���Ĳ��Կ���");
+        writeLog("日志");
         readLog();
         
        // System.out.println(readLog());

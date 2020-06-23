@@ -10,6 +10,6 @@ public class ArrayListUse {
 		Collection c1 = new ArrayList();
 		c1.add(1);
 		c1.add("KaoPu");
+		System.out.println("c1的值为：" + c1);
 	}
-
 }

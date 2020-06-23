@@ -3,9 +3,12 @@ package com.test.container;
 import java.util.*;
 import org.testng.annotations.Test;
 
-
-
-
+/**
+ * 
+ * @author Wangwanru
+ * HashMap<int,String>是错误的：因为int是基本类型，而key和value要求是对象，所以要用Integer而不是int。
+ *
+ */
 public class MapUse {
 	
 	public static final Map<String, Integer> areaCode = new HashMap<String, Integer>();
@@ -30,7 +33,6 @@ public class MapUse {
 		if(id.length() < 18) {
 		//	id = generate();
 		}
-		//System.out.println("hhahahahahhahahahahahh");
 		System.out.println(id);
 		
 	}
@@ -112,7 +114,7 @@ public class MapUse {
 			return "0" + code;
 		} else {
 			return "" + code;
-		}
+		} 
 	}
 	
 	

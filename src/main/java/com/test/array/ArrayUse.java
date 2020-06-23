@@ -3,16 +3,14 @@ package com.test.array;
 public class ArrayUse {
 	public static void main(String[] args) {
 		
-		int[] s;//����һ������
-		s = new int[5];//Ϊ����Ԫ�ط���ռ�
-		//Ϊ���鸳ֵ
+		int[] s;
+		s = new int[5];
 		for (int i = 0; i < s.length; i++) {
 			s[i] = 2 * i +1;
 			System.out.print(s[i] + " ");
 		}
 		System.out.println("\n" + s);
 		
-		//main������args����
 		for(int i = 0; i < args.length; i ++) {
 			System.out.print(args[i] + " ");
 		}
@@ -21,7 +19,7 @@ public class ArrayUse {
 			System.out.println(
 					"Usage: ArrayUse \"n1\" \"op\" \"n2\""
 					);
-			System.exit(-1);//"-1"��ʾ�������˳���0��ʾ�����˳�
+			System.exit(-1);
 		}
 		double d1 = Double.parseDouble(args[0]);
 		double d2 = Double.parseDouble(args[2]);
