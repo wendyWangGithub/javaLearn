@@ -20,6 +20,8 @@ public class TimeTest {
 	
 	
 	public static void main(String[] args) {
+		Calendar ca = Calendar.getInstance();
+		System.out.println("333333333:   " + ca.getTime());
 		
 		String BeginTime = getCurrentDateTime("yyyy-MM-dd HH:mm:ss");//获取格式化时间
 		System.out.println("开始时间为：" + BeginTime);
@@ -47,36 +49,36 @@ public class TimeTest {
 	    System.out.println("程序运行时间：" + (endTime - startTime) + "ms"); //输出程序运行时间
 	}
 	
-	public static String formatString(String _beforeFormat, String bformat, String aformat) {
-		String fString = "";
-		SimpleDateFormat bsdf = new SimpleDateFormat(bformat);
-		SimpleDateFormat asdf = new SimpleDateFormat(aformat);
+	public static String formatString(String _beforeFormat, String format1, String format2) {
+		String resultString = "";
+		SimpleDateFormat format11 = new SimpleDateFormat(format1);
+		SimpleDateFormat format22 = new SimpleDateFormat(format2);
 		try {
-			Date date = bsdf.parse(_beforeFormat);
+			Date date = format11.parse(_beforeFormat);
 			System.out.println("Date:" + date);
-			fString = asdf.format(date);
-			System.out.println("fString:" + fString);
+			resultString = format22.format(date);
+			System.out.println("resultString:" + resultString);
 		} catch (ParseException e) {
 			System.out.println(e.getMessage());
 		}
-		return fString;
+		return resultString;
 	}
 	
 	
-	public static String sfm(String fm) {
+	public static String sfm(String beforFormat) {
 		
-		String dfr = "";
+		String resultString = "";
 		
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		DateFormat _df = new SimpleDateFormat("yyyyMMdd");
+		DateFormat data1 = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat data2 = new SimpleDateFormat("yyyyMMdd");
 		try {
-			
-			dfr = df.format(_df.parse(fm));
-			//System.out.printf(dfr);
+
+			resultString = data1.format(data2.parse(beforFormat));
+			System.out.printf(resultString);
 		} catch (ParseException e) {
 			System.out.println(e.getMessage());
 		}
-		return dfr;
+		return resultString;
 	}
 	
 }
