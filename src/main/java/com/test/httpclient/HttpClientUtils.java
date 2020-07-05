@@ -1,5 +1,7 @@
 package com.test.httpclient;
 
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -22,7 +24,7 @@ public class HttpClientUtils {
 	public static String get(String url) throws Exception {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet httpGet = new HttpGet(url);
-		RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(2000).setConnectTimeout(2000).build();
+		RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(9000).setConnectTimeout(9000).build();
 		httpGet.setConfig(requestConfig);
 		
 		CloseableHttpResponse result = httpClient.execute(httpGet);
@@ -36,12 +38,13 @@ public class HttpClientUtils {
 	public static String post(String url, String strParam) throws Exception {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpPost httpPost = new HttpPost(url);
-		RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(2000).setConnectTimeout(2000).build();
+		RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(9000).setConnectTimeout(9000).build();
 		httpPost.setConfig(requestConfig);
 		if (null != strParam) {
 			StringEntity entity = new StringEntity(strParam,"utf-8");
 			entity.setContentEncoding("UTF-8");
-			entity.setContentType("application/x-www-form-urlencoded");
+			//entity.setContentType("application/x-www-form-urlencoded");
+			entity.setContentType("application/json");
 			httpPost.setEntity(entity);
 		}
 		CloseableHttpResponse result = httpClient.execute(httpPost);
@@ -59,21 +62,30 @@ public class HttpClientUtils {
 			System.out.println("ip地址未查询到信息 !");
 			return;
 		}
-		if (jsonObject.getJSONArray("data").size() > 1) {
+		if (jsonObject.getJSONArray("data").size() > 1) {                                                                                                   
 			System.out.println("ip地址存在多个查询结果，默认取第一个 !");
 		}
 		jsonObject = jsonObject.getJSONArray("data").getJSONObject(0);
 		System.out.println(jsonObject.getString("origip") + "  " + jsonObject.getString("location"));
 	}
 	
-	public static void queryIdNoInfo(String idNo) throws Exception {
-		String url = "https://sp0.baidu.com/5aU_bSa9KgQFm2e88IuM_a/sfzcxgg.duapp.com/index.php";
-		String html = post(url, "in_id="+ idNo + "&submit=查 询");
+	public static void queryIdNoInfo(String idNo, String password) throws Exception {
+		//String url = "https://sp0.baidu.com/5aU_bSa9KgQFm2e88IuM_a/sfzcxgg.duapp.com/index.php";
+		String url = "http://localhost:8080/helloSpringMVC/addUser/";
+		//String html = post(url, "in_id="+ idNo + "&submit=查 询");
+		JSONObject json = new JSONObject();
+		json.put("name", idNo);
+		json.put("password", password);
+		//String html = post(url, "name="+ idNo + "&password=" + password);
+		String html = post(url, json.toJSONString());
 		Parser parser = Parser.createParser(html, "UTF-8");
-		IdNoInfo idNoInfo = handleQueryIdInfoResult(parser);
-		System.out.println(idNoInfo);
-	}
 
+		JSONObject result = JSONObject.parseObject(html);
+		System.out.println(JSON.toJSONString(result, SerializerFeature.PrettyFormat));
+		//IdNoInfo idNoInfo = handleQueryIdInfoResult(parser);
+		//System.out.println(idNoInfo);
+	}
+	/**
 	private static IdNoInfo handleQueryIdInfoResult(Parser parser) throws ParserException {
 		TagNameFilter tagNameFilter = new TagNameFilter("div");
 		NodeList nodeList = parser.extractAllNodesThatMatch(tagNameFilter);
@@ -100,8 +112,9 @@ public class HttpClientUtils {
 		}
 		return idNoInfo;
 	}
+	 */
 
 	public static void main(String[] args) throws Exception {
-		queryIdNoInfo("360281198801215114");
+		queryIdNoInfo("123","456");
 	}
 }

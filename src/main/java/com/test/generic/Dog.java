@@ -5,7 +5,7 @@ public class Dog {
 	private String tailColor;
 	
 	public Dog() {
-		
+		super();
 	}
 	
 	public Dog(int height, String tailColor) {

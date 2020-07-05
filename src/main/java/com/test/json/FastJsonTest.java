@@ -10,6 +10,25 @@ import java.util.ArrayList;
 public class FastJsonTest {
 	
 	public static void main(String[] args) {
+		ConstructionMethodTest doggy = new ConstructionMethodTest("yellow", "short");
+		//把对象转化为JSONString类型https://www.iqiyi.com/w_19s0ct5kmh.html，jsonStr是字符串，但实际上是数组格式的字符串
+		String jsonStr = JSON.toJSONString(doggy, true);
+		System.out.println(doggy.getColor() + doggy);
+		System.out.println("dog1对象转化为JSONString后的值为："  + jsonStr);
+		System.out.println("end..");
+		Qgl doggy2 = new Qgl("yellow", "short", 100);
+		//把对象转化为JSONString类型https://www.iqiyi.com/w_19s0ct5kmh.html
+		String jsonStr2 = JSON.toJSONString(doggy2, true);
+		System.out.println("dog1对象转化为JSONString后的值为："  + jsonStr2);
+		System.out.println(Qgl.class);
+		System.out.println("end2..");
+		//把JSONString转化为类对象
+		Qgl jgl = JSON.parseObject(jsonStr2, Qgl.class);
+		System.out.println(jgl.getA());
+		System.out.println("end3..");
+
+
+
 		Dog dog1 = new Dog(100, "blue,red");
 		List<Dog> list = new ArrayList<Dog>();
 		list.add(dog1);
