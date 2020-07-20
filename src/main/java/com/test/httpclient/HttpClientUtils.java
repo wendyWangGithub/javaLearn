@@ -18,6 +18,7 @@ import org.htmlparser.util.ParserException;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.web.servlet.tags.EditorAwareTag;
 
 public class HttpClientUtils {
 	
@@ -73,14 +74,16 @@ public class HttpClientUtils {
 		//String url = "https://sp0.baidu.com/5aU_bSa9KgQFm2e88IuM_a/sfzcxgg.duapp.com/index.php";
 		String url = "http://localhost:8080/helloSpringMVC/addUser/";
 		//String html = post(url, "in_id="+ idNo + "&submit=查 询");
+		//postbody里的内容为json格式
 		JSONObject json = new JSONObject();
 		json.put("name", idNo);
 		json.put("password", password);
 		//String html = post(url, "name="+ idNo + "&password=" + password);
 		String html = post(url, json.toJSONString());
 		Parser parser = Parser.createParser(html, "UTF-8");
-
+		//将返回结果html，显示为易看的格式
 		JSONObject result = JSONObject.parseObject(html);
+		//System.out.println(result.getString(password));
 		System.out.println(JSON.toJSONString(result, SerializerFeature.PrettyFormat));
 		//IdNoInfo idNoInfo = handleQueryIdInfoResult(parser);
 		//System.out.println(idNoInfo);

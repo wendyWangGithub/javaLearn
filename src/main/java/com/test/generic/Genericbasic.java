@@ -55,13 +55,13 @@ public class Genericbasic {
 		 * 泛型类型为对象
 		 */
 		List<Dog> doglist = new ArrayList();
-		Dog d1 = new Dog(10,"yellow");
-		Dog d2 = new Dog(11,"white");
+		Dog d1 = new Dog(10,"yellow",null);
+		Dog d2 = new Dog(11,"white",null);
 		doglist.add(d1);
 		doglist.add(d2);
 		for (Dog doggy:doglist) {
 			System.out.println("对象类型的泛型打印结果为：" + doggy);
-			System.out.println("对象类型的泛型类中元素值：" + "狗高为：" + doggy.getHeight()+ ",狗尾巴颜色为:" + doggy.geTailColor());
+			//System.out.println("对象类型的泛型类中元素值：" + "狗高为：" + doggy.getHeight()+ ",狗尾巴颜色为:" + doggy.geTailColor());
 		}
 		System.out.println();
 		
