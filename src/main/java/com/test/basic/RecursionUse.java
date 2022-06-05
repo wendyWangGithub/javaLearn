@@ -3,18 +3,15 @@ package com.test.basic;
 public class RecursionUse {
 
 	/**
-	 * ʵ��Fibonacci����:1,1,2,3,5,8....�ĵ�40����
+	 * 递归，A方法调用A方法自己
 	 * F1=1,F2=1     Fn=F(n-1)+F(n-2)(n>2)
 	 */
 	public static void main(String[] args) {
 		System.out.println(f(6));
 		System.out.println(f2(8));
-            
 	}
 	
-	/**
-	 * �ݹ鷽��
-	 */
+
 	public static long f(int i) {
 		long m = 0;
 		if (i == 1 || i ==2) {
@@ -24,10 +21,7 @@ public class RecursionUse {
 			return m;
 		}
 	}
-	
-	/**
-	 * �ǵݹ鷽��
-	 */
+
 	public static long f2(int i) {
 		if (i < 1) {
 			System.out.println("Invalid parameter!");

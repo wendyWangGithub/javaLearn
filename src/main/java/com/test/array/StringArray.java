@@ -8,7 +8,6 @@ public class StringArray {
 		printArray(stringArray);
 		//将字符串转化为数组并打印
 		String stringa = "a,b,c";
-		changeToArray(stringa);
 		printArray(changeToArray(stringa));
 	}
 	
@@ -38,6 +37,7 @@ public class StringArray {
 	 * 打印String类型数组
 	 */
 	public static void printArray(String[] s) {
+		System.out.print("数组的值为：");
 		for (int i=0; i<s.length; i++){
 			System.out.print(s[i] + ",");
 		}

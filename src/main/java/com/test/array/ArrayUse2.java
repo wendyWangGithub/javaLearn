@@ -1,16 +1,19 @@
 package com.test.array;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 public class ArrayUse2 {
 	public static void main(String[] args) {
-		
+
 		Date[] days;
 		days = new Date[3];
 		for (int i = 0; i < 3; i++) {
 			days[i] = new Date(2004, 4, i + 1);
-			System.out.println("days��Ԫ��ֵΪ" + days[i] + ",");
+			System.out.println("days的地址为：" + days[i] + ",");
 		}
-		//��̬��ʼ�������鶨��������Ԫ�ط���ռ�͸�ֵ�Ĳ����ֿ�����
+
 		 int a[];
 		 a = new int[3];
 		 a[0] = 1; a[1] = 2; a[2] = 3;
@@ -20,7 +23,7 @@ public class ArrayUse2 {
 		 da[0] = new Date(1, 20, 2004);
 		 da[1] = new Date(2, 20, 2004);
 		 
-		 //��̬��ʼ�����ڶ��������ͬʱ��Ϊ����Ԫ�ط���ռ䲢��ֵ
+
 		 int b[] = {1, 2, 3};
 		 Date dat[] = {
 			 new Date(1, 2, 3),

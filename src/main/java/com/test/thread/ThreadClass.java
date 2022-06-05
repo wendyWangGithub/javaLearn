@@ -2,6 +2,7 @@ package com.test.thread;
 
 public class ThreadClass {
 
+	//主线程和子线程
 	public static void main(String[] args) {
 		
 		Runner1 r= new Runner1();
@@ -11,7 +12,6 @@ public class ThreadClass {
 		}
 	}
 }
-
 
 class Runner1 extends Thread {
 	

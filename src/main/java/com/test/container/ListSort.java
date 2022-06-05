@@ -7,16 +7,15 @@ import java.util.List;
 public class ListSort {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
         //集合
         List  ali = new ArrayList<Integer>();
         ali.add(1);
         ali.add(4);
         ali.add(3);
-        System.out.println(ali);
+        System.out.println("排序前：" + ali);
         Collections.sort(ali);
         Collections.reverse(ali);
-        System.out.println("排序后的结果为：" + ali);
+        System.out.println("排序再倒序后：" + ali);
 
 
         //数组冒泡从小到大排序

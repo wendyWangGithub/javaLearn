@@ -32,7 +32,7 @@ public class HttpClientGetUtils {
 		}
 		String url = "https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?co=&resource_id=6006&t=1501510188699&ie=utf8&oe=gbk&format=json&query=" + ip;
 		String result = get(url);
-		System.out.println("result的结果为：" + result);
+		//System.out.println("result的结果为：" + result);
 		JSONObject jsonObject = JSON.parseObject(result);
 		if (jsonObject.getJSONArray("data").size() == 0) {
 			System.out.println("ip地址未查询到信息 !");

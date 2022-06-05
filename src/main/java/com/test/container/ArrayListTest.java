@@ -13,6 +13,8 @@ public class ArrayListTest {
 		List<User> userList1 = new ArrayList<User>();
 		List<User> userList2 = new ArrayList<User>();
 		User user1 = new User();
+
+		//userList1空值
 		userList1.add(user1);
 		System.out.println("print value for userlist1");
 		for(User user:userList1){
@@ -21,18 +23,16 @@ public class ArrayListTest {
 		}
 		
 		userList2.add(user1);
-		
 		System.out.println("set value for userlist2");
 		for(User user:userList2){
 			user.setName("name");
 			user.setPassword("password");
 		}
 		System.out.println("print value for userlist1");
-		for(User user:userList1){
+		for(User user:userList2){
 			System.out.println(user.getName());
 			System.out.println(user.getPassword());
 		}
-		
 	}
 	
 	public static class User{

@@ -15,7 +15,7 @@ public class LinkedListTest {
 	      collection.add("One");
 	      collection.add("Two");
 	      list.addAll(collection);
-	      System.out.println("LinkedList:" + list);
+	      System.out.println("List-Collection:" + list);
 	      
 	      List<Integer> a = new ArrayList();
 	      a.add(1);

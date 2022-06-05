@@ -3,7 +3,6 @@ package com.test.loop;
 public class ForUse {
 
 	/**
-	 * ��forѭ��ʵ��1��n�Ľ׳� 
 	 */
 	public static void main(String[] args) {
 		long result = 0;
@@ -17,7 +16,6 @@ public class ForUse {
 	}
 	
 	/**
-	 * ��forѭ��ʵ�ִ�1��99֮�������ĺ�
 	 * 1+3+...+99
 	 */
 	public static long numAdd() {

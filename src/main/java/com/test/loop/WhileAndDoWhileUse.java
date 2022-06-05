@@ -3,7 +3,6 @@ package com.test.loop;
 public class WhileAndDoWhileUse {
 
 	/**
-	 * ��whileʵ�ִ�0��9����� 
 	 */
 	public static void main(String[] args) {
 		int i = 0;
@@ -16,7 +15,6 @@ public class WhileAndDoWhileUse {
 	}
 	
 	/**
-	 * ��dowhileʵ�ִ�0��9�����
 	 */
 	public static int numPrint() {
 		int j = 0;

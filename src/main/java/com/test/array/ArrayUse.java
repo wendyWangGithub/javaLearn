@@ -5,20 +5,19 @@ public class ArrayUse {
 		
 		int[] s;
 		s = new int[5];
+		System.out.print("int类型数组值为：");
 		for (int i = 0; i < s.length; i++) {
 			s[i] = 2 * i +1;
-			System.out.print(s[i] + " ");
+			System.out.print( s[i] + " ");
 		}
-		System.out.println("\n" + s);
+		System.out.println("\n" + "int类型数地址为：" + s);
 		
 		for(int i = 0; i < args.length; i ++) {
 			System.out.print(args[i] + " ");
 		}
 		
 		if(args.length < 3) {
-			System.out.println(
-					"Usage: ArrayUse \"n1\" \"op\" \"n2\""
-					);
+			System.out.println("Usage: ArrayUse \"n1\" \"op\" \"n2\"");
 			System.exit(-1);
 		}
 		double d1 = Double.parseDouble(args[0]);

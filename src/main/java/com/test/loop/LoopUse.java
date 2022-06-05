@@ -3,28 +3,19 @@ package com.test.loop;
 public class LoopUse {
 
 	/**
-	 * ���1~100��ǰ5�����Ա�3��������(ʹ��for��if��breakʵ�֣�
 	 */
 	public static void main(String[] args) {
-		int count = 1;
-		for(int i =1; i < 101; i++) {
-			if(i % 3 == 0) {
-				System.out.print("i=" + i + ",");
-				count++;
-				if (count == 6) {
-					break;
-				}
-			}
-		}
-		System.out.println();
-		devisibleBy3();              
+		System.out.println("被3整除的数");
+		devisibleBy3();
+		System.out.println("奇数");
 		primePrint();
+		System.out.println("质数");
 		primePrint2();
+		System.out.println("质数2");
 		primePrint3();
 	}
 	
 	/**
-	 * ���1~100��ǰ5�����Ա�3��������(ʹ��while��if��breakʵ�֣�
 	 */
 	public static void devisibleBy3() {
 		int j = 1;
@@ -43,15 +34,14 @@ public class LoopUse {
 	}
 	
 	/**
-	 * ���101~200�ڵ�����
 	 */
 	public static void primePrint() {
 		for (int k = 1; k < 6; k += 2){
 			if (isSuShu(k)) {
 				System.out.print("k=" + k + ",");
-				System.out.println();
 			}
 		}
+		System.out.println();
 	}
 	
 	public static boolean isSuShu(int number) {
@@ -66,7 +56,6 @@ public class LoopUse {
 	}
 	
 	/**
-	 * ���101~200�ڵ�����
 	 */
 	public static void primePrint2() {
 		for (int n = 101; n < 200; n += 2){
@@ -85,7 +74,6 @@ public class LoopUse {
 	}
 	
 	/**
-	 * ���101~200�ڵ�����
 	 */
 	public static void primePrint3() {
 		for (int n = 13; n < 20; n += 2){

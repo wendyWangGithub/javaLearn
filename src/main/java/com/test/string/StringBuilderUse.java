@@ -1,6 +1,5 @@
 package com.test.string;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -8,37 +7,27 @@ public class StringBuilderUse {
 	
   /**
    * 频繁的更改字符串时，StringBuilder要比String快很多，因为String每次更改都要new一次
+   * StringBuilder.append方法返回值是StringBuilder的一个引用
    * Author wangwanru
+   * date：2018/01/05
    */
 	@Test
 	public void useStringBuilder() {
-		String text = "" ;  
-        
+		//String
+		String text = "" ;
         long beginTime = System.currentTimeMillis();  
         for ( int i= 0 ;i< 10000 ;i++)  
               text = text + i;  
         long endTime = System.currentTimeMillis();  
-        System.out.println("执行时间：" +(endTime-beginTime));  
+        System.out.println("String执行时间：" +(endTime-beginTime) );
 
+		//StringBuilder
         StringBuilder sb = new StringBuilder ( "" );  
         beginTime = System.currentTimeMillis();  
         for ( int i= 0 ;i< 10000 ;i++)  
                sb.append(String.valueOf(i));  
         endTime = System.currentTimeMillis();  
-        System.out.println("执行时间：" +(endTime-beginTime));   
-        Assert.assertEquals(2, 1);
-	}
-	
-	/**
-	 * append方法
-	 * StringBuilder.append方法返回值是StringBuilder的一个引用
-	 */
-	@Test
-	public void appenduse() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(1);
-		sb.append(2);
-		System.out.println(sb);
-		Assert.assertEquals(2, 1);
+        System.out.println("StringBuilder执行时间：" +(endTime-beginTime));
+		//System.out.println("StringBuilder的值为：" +sb);
 	}
 }

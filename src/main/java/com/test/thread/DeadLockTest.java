@@ -24,6 +24,8 @@ public class DeadLockTest {
 		public static void main(String[] args){
 		Thread thread1 = new Thread(new Lock1());
 		Thread thread2 = new Thread(new Lock2());
+
+		//开启两个线程
 		thread1.start();
 		thread2.start();
 		}
@@ -34,6 +36,7 @@ public class DeadLockTest {
 			try{
 				System.out.println("Lock1 is running");
 				while(true){
+					//synchronized是java的一个关键字,他可以保证被它修饰的方法或者代码块在任意时刻只能有一个线程执行。
 					synchronized(DeadLockTest.obj1){
 						System.out.println("Lock1 locked obj1");
 						Thread.sleep(30000);

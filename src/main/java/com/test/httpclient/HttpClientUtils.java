@@ -70,7 +70,7 @@ public class HttpClientUtils {
 		System.out.println(jsonObject.getString("origip") + "  " + jsonObject.getString("location"));
 	}
 	
-	public static void queryIdNoInfo(String idNo, String password) throws Exception {
+	public void queryIdNoInfo(String idNo, String password) throws Exception {
 		//String url = "https://sp0.baidu.com/5aU_bSa9KgQFm2e88IuM_a/sfzcxgg.duapp.com/index.php";
 		String url = "http://localhost:8080/helloSpringMVC/addUser/";
 		//String html = post(url, "in_id="+ idNo + "&submit=查 询");
@@ -117,7 +117,9 @@ public class HttpClientUtils {
 	}
 	 */
 
-	public static void main(String[] args) throws Exception {
+
+//在/test/java/com.test.httpclient/HttpclientUtilsTest中用Testng来执行了，不再用main方法
+/*	public static void main(String[] args) throws Exception {
 		queryIdNoInfo("123","456");
-	}
+	}*/
 }

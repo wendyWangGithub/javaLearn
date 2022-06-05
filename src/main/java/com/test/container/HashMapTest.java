@@ -11,14 +11,14 @@ public class HashMapTest {
 		hm.put("key3", "value3");
 		String value2 = hm.get("key2");
 		System.out.println("value2的值为：" + value2);
-		//遍历hashmap中的所有元素
-		printHashMapValue(hm);
+		System.out.print("hashmap遍历后的值为：");
+		printHashMapValueIterator(hm);
 	}
 	
-	public static void printHashMapValue(Map<String,String> hm){
+	public static void printHashMapValueIterator(Map<String,String> hm){
 			Iterator ir = hm.entrySet().iterator();
 			while(ir.hasNext()){
-			System.out.println("hashmap遍历后的值为：" + ir.next());
+			System.out.print( ir.next() + ",");
 		}
 	}
 }

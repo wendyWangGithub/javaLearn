@@ -1,4 +1,4 @@
-package com.test.spring;
+/*package com.test.spring;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +9,11 @@ import org.springframework.stereotype.Controller;
 public class AutowiredTest {
 
     @Autowired
-    public AutoWiredUse awu;
+    public AutoWiredUse autoWiredUse;
 
     @Test
     public void testPrint(){
-        awu.testMethod();
+        autoWiredUse.testMethod();
     }
 
-}
+}*/

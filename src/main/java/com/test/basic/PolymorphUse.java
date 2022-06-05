@@ -1,65 +1,55 @@
 package com.test.basic;
 
-class Animal2 {
+/**
+ * 多态：在继承的基础上重写
+ * 类：动物-猫或鸟-人
+ */
+class Anima {
 	
 	public String name;
 	
-	Animal2(String name) {
+	Anima(String name) {
 		this.name = name;
 	}
-	
+
 	public void enjoy() {
-		System.out.print("����......");
+		System.out.print(name + "很开心！");
 	}
 }
 
-class Cat4 extends Animal2 {
+class Cat extends Anima {
 	private String eyesColor;
 	
-	Cat4(String n, String c) {
-		super(n);
-		eyesColor = c;
+	Cat(String name, String color) {
+		super(name);
+		eyesColor = color;
 	}
 	
 	public void enjoy() {
-		System.out.println("è����......");
+		System.out.println(name + "很开心！");
 	}
 }
 
-class Dog4 extends Animal2 {
-	
-	private String furcolor;
-	
-	Dog4(String n, String c) {
-		super(n);
-		furcolor = c;
-	}
-	
-	public void enjoy() {
-		System.out.println("������......");
-	}
-}
-
-class Bird extends Animal2 {
+class Bird extends Anima {
 	
 	private String featherColor;
 	
-	Bird(String n, String f) {
-		super(n);
-		featherColor = f;
+	Bird(String name, String color) {
+		super(name);
+		featherColor = color;
 	}
 	
 	public void enjoy() {
-		System.out.println("�����......");
+		System.out.println(name + "很开心！");
 	}
 }
 
 class Lady {
 	
 	private String name;
-	private Animal2 pet;
-	
-	Lady(String name, Animal2 pet) {
+	private Anima pet;
+	//构造方法
+	Lady(String name, Anima pet) {
 		this.name = name;
 		this.pet = pet;
 	}
@@ -68,22 +58,19 @@ class Lady {
 		pet.enjoy();
 	}
 }
-
+//多态
 public class PolymorphUse {
 	
 	public static void main(String[] args) {
 		
-		Cat4 c = new Cat4("catname", "blue");
-		Dog4 d = new Dog4("dogname", "black");
-		Bird b = new Bird("birdname", "yellow");
+		Cat c = new Cat("cat", "eyesColor-blue");
+		Bird b = new Bird("bird", "featherColor-yellow");
 		
-		Lady l1= new Lady("l1", c);
-		Lady l2 = new Lady("l2", d);
-		Lady l3 = new Lady("l3", b);
-		
-		l1.myPetEnjoy();
-		l2.myPetEnjoy();
-		l3.myPetEnjoy();
+		Lady lady1= new Lady("女士1", c);
+		Lady lady2 = new Lady("女士2", b);
+
+		lady1.myPetEnjoy();
+		lady2.myPetEnjoy();
 	}
 }
 

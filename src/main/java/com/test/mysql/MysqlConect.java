@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.*;
 
 public class MysqlConect {
-
-	private String driver = "com.mysql.jdbc.Driver";;
-	private String url = "jdbc:mysql://localhost:3306/test";;
+	private String driver = "com.mysql.cj.jdbc.Driver";
+	//private String driver = "com.mysql.jdbc.Driver";
+	//private String url = "jdbc:mysql://localhost:3306/test";;
+	private String url = "jdbc:mysql://localhost:3306/test?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";;
 	private String name = "root";
-	private String password = "Jsbwm0808";;
+	private String password = "Success123456";;
 	Connection conn;
 	Statement sta;
 	PreparedStatement prepare;

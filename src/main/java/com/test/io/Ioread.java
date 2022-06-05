@@ -11,11 +11,11 @@ public class Ioread {
 	public static void main (String args[]){
 		
 		try {
-			FileInputStream fis = new FileInputStream("F:/wrwang/JavaTest/test/src/test/resources/1.txt");
-			InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-			BufferedReader bf = new BufferedReader(isr);
+			FileInputStream fileInputStream = new FileInputStream("src/main/resources/myfile.txt");
+			InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
+			BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 			String valueString = null;
-			while ((valueString = bf.readLine()) != null) {
+			while ((valueString = bufferedReader.readLine()) != null) {
 				System.out.println(valueString);
 			}
 			

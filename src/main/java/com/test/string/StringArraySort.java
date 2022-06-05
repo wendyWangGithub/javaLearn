@@ -17,8 +17,9 @@ public class StringArraySort {
 				}
 			}
 		}
+		System.out.println("input的值为:");
 		for(String key:input){
-			System.out.println("input的值为:" + key);
+			System.out.print( key + ",");
 		}
 	}
 	
